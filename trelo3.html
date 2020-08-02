@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/letters-and-numbers-1/32/letter_T_red-512.png" type="image/icon">
+    <link rel="stylesheet" href="graphics/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trrelllo!!</title>
+    <style>
+        .heading{
+            
+            display: inline-block;
+            padding: 2px;
+            font-size: 30px;
+            margin: 6px;
+            padding-right: 160px;
+            font-family: "Comic Sans","Comic Sans MS"; }
+        body{
+            
+            margin: 0px;
+            margin-right: 0px;
+            padding-top: 115px;
+            background-image: url("https://wallpaperhd.wiki/wp-content/uploads/hd-backgrounds-websites-350851-download-free-website-background-1920x1080-for-mobile-hd.jpg");
+            background-size: cover;
+            
+            background-attachment: fixed;
+           }
+        .topbar{
+            display: inline-block;
+            background-color: rgba(27, 27, 27, 1);
+            padding: 5px;
+            border-radius: 5px;;
+            border:1px solid azure;
+            
+            
+           
+        }
+        .topbar:hover{
+            color: black;
+            background-color: white;
+            opacity: 0.6;
+            transition:0.5s ease-out;
+           cursor: pointer;
+        }
+        #search{
+            background-color:  rgba(27, 27, 27, 0.615);
+            
+        }
+        #search:focus{
+            background-color: aliceblue;
+        }
+        ul{
+            padding: 2px 12px;
+            
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 15px;
+            margin: 6px;
+            display: inline-block;
+            
+            
+        }
+        #na1{
+            color: white;
+
+            display: flex;
+            margin-left: 0px;
+            padding: 2px;
+            background-color: rgba(27, 27, 27, 0.315);
+            justify-content: space-between;
+            /*position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;*/
+        }
+        .downbar{
+            display: inline-block;
+            margin: 6px;
+        }
+        #na2{
+            display: flex;
+            justify-content: space-between;
+            background-color:  rgba(27, 27, 27, 0.2);
+            padding: 3px 18px;
+            color: cornsilk;
+            font-family: monospace;
+            /*position: fixed;
+            top: 62;
+            left: 0;
+            right: 0;*/
+        }
+        #show-menu:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .outerbound{
+            margin: 40px;
+            
+            top: 222;
+            left: 5650;
+            right: 47570;
+            display: flex;
+
+            
+        }
+        .taskbox{
+            width: 230px;
+            background-color: rgba(255, 255, 255, 0.432);
+        }
+        .taskheading{
+            width: 20opx;
+            background-color: tomato;
+            display: flex;
+            justify-content: space-between;
+            padding:10px 20px;
+            padding-right:10px;
+            font-family: sans-serif;
+        }
+        .taskboard{
+            list-style: none;
+            padding: 2px 6px;
+        }
+        .taskboard li{
+            background-color:white;
+            margin: 3px;
+            width: 180px;
+            border-radius: 1px;
+            padding: 10px;
+            
+            
+        }
+        span{
+            font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+        }
+        .mainboardlist{
+            list-style: none;
+            display: flex;
+            
+        } 
+        .taskboard li:hover .pencil{
+           
+           display: inline;
+           opacity: 1;
+       }
+       .taskboard li:hover{
+           margin-left: 5px;
+
+       }  
+       .pencil{
+           float: right;
+           display: none;
+       }
+       .pencil:hover{
+           
+           opacity: 0.2;
+           padding:1px;
+           background-color: darkgray;
+       }
+
+            
+            
+        
+        .mainboardlist li{
+            margin-left: 15px;
+            float: left;
+            
+        }
+        #er{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .addBtn{
+            height: 30px;
+            margin: 10px;
+            margin-top: 100px;
+            display:inline;
+            
+        }
+    </style>
+</head>
+<script>
+    function newE() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        var mainbo=document.getElementById('suj');
+        var dd=document.createElement('div');
+        var li1=document.createElement('li');
+        var taskh=document.createElement('div');
+        var headdiv=document.createElement('div');
+        var s=document.createElement("span");
+        s.innerHTML="...";
+        taskh.appendChild(s);
+        
+        headdiv.innerHTML= inputValue;
+        mainbo.appendChild(li1);
+        dd.classList.add('taskbox');
+        taskh.classList.add('taskheading');
+        li1.appendChild(dd);
+        dd.appendChild(taskh);
+        taskh.appendChild(headdiv);
+        taskh.appendChild(s);
+        var ddiv=document.createElement('div');
+        var inp1=document.createElement('input');
+        var inp2=document.createElement('button');
+        var ulin=document.createElement('ul');
+       
+        inp1.classList.add('addBtnin');
+        inp2.innerHTML="Add";
+        inp1.setAttribute('placeholder','Title..');
+        inp2.setAttribute('value','Add');
+        inp2.classList.add('addBtnin');
+        dd.appendChild(ddiv);
+        ddiv.appendChild(ulin);
+        ddiv.appendChild(inp1);
+        ddiv.appendChild(inp2);
+    }
+    inp2.onclick=function()
+        {   
+            var lin=document.createElement('li');
+            var i=document.createElement('i');
+            if(inp1.value==""){
+                alert("You must write something!");
+            }
+            else
+            {
+                i.classList.add("pencil");
+                i.classList.add("fas");
+                i.classList.add("fa-pencil-alt");
+                ulin.classList.add('taskboard');
+                lin.innerHTML=inp1.value;
+                ulin.appendChild(lin);
+                lin.appendChild(i);
+                inp1.value="";
+            }
+        }
+        
+    document.getElementById("myInput").value = "";
+
+    
+    for (i = 0; i < close.length; i++) 
+    {
+        close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }}}
+
+    function newE1() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput1").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        document.getElementById ("task1").appendChild(li);
+        var i=document.createElement('i');
+        i.classList.add("pencil");
+        i.classList.add("fas");
+        i.classList.add("fa-pencil-alt");
+        li.appendChild(i);
+    }
+    document.getElementById("myInput1").value = "";
+
+    
+    for (i = 0; i < close.length; i++) 
+    {
+        close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }}}
+
+    function newE2() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput2").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        document.getElementById ("task2").appendChild(li);
+        var i=document.createElement('i');
+        i.classList.add("pencil");
+        i.classList.add("fas");
+        i.classList.add("fa-pencil-alt");
+        li.appendChild(i);
+    }
+    document.getElementById("myInput2").value = "";
+
+    
+    for (i = 0; i < close.length; i++) 
+    {
+        close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }}}
+
+</script>
+<body>
+    <div id="er">
+        <nav id="na1">
+            <ul>
+                <li class="topbar" style="margin-right: 3px;"><i class="fas fa-home"></i></li>
+                <li class="topbar"style="margin-right: 3px;"><i class="fas fa-list"> </i> Board</li>
+                <li class="topbar" style="padding: 0px;margin-right: 3px;opacity: 1;">
+                    <input id='search' type="search" >
+                </li>
+            </ul>
+            <div class="heading">
+                Tralalala
+            </div>
+            <ul>
+                <li class="topbar"style="margin-left: 3px;"><i class="fas fa-plus"></i></li>
+                <li class="topbar"style="margin-left: 3px;"><i class="fas fa-user-alt"></i></li>
+            </ul>
+        </nav>
+    
+        <nav id="na2">
+            <div class="downbar">
+                Frontend Training
+            </div>
+            <div class="downbar" id="show-menu">
+                <i class="fas fa-ellipsis-v"></i> Show Menu
+            </div>
+        </nav>
+    </div>
+    <div class="outerbound">
+        <ul class="mainboardlist" id="suj">
+            <li>
+                <div class="taskbox">
+                    <div class="taskheading">
+                        <div>To Do</div>
+                        <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">...</span>
+                    </div>
+                    <div>
+                        <ul class="taskboard" id="task1">
+                            <li>learn javascript<i class="pencil fas fa-pencil-alt"></i></li>
+                            <li>prepare resume<i class="pencil fas fa-pencil-alt"></i></li>
+                            <li>rent a bike<i class="pencil fas fa-pencil-alt"></i></li>
+                            <li>Hit a gym<i class="pencil fas fa-pencil-alt"></i></li>
+                        </ul>
+                        <input type="text" class="addBtnin" id="myInput1" placeholder="Title..." style="margin-right: 3px;">
+                        <button onclick="newE1()" class="addBtnin" style="margin-left: 0px;">add</button>
+                                        
+                    </div>
+                
+                </div>
+            </li>
+            <li>
+                <div class="taskbox">
+                    <div class="taskheading">
+                        <div>Doing</div>
+                        <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">...</span>
+                    </div>
+                    <div>
+                        <ul class="taskboard"id="task2">
+                            <li>learning HTML<i class="pencil fas fa-pencil-alt"></i></li>
+                            <li>core exercises<i class="pencil fas fa-pencil-alt"></i></li>
+                           
+                        </ul>
+                        <input type="text" class="addBtnin" id="myInput2" placeholder="Title..." style="margin-right: 3px;">
+                        <button onclick="newE2()" class="addBtnin" style="margin-left: 0px;">add</button>
+                    </div>
+                
+                </div>
+            </li>
+    
+        </ul> 
+        <input type="text" class="addBtn" id="myInput" placeholder="Title..." style="margin-right: 3px;">
+        <button onclick="newE()" class="addBtn" style="margin-left: 0px;">add</button>
+        
+        
+    </div>  
+</body>
+</html> 
